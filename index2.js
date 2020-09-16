@@ -19,13 +19,18 @@ function showPassword() {
   
   // When the user clicks on the password field, show the message box
   myInput.onfocus = function() {
-    document.getElementById("message").style.display = "block";
+    document.getElementById("mess").style.display = "block";
   }
-  
+   
   // When the user clicks outside of the password field, hide the message box
-  myInput.onblur = function() {
-    document.getElementById("message").style.display = "none";
+ 
+
+  mySecondInput.onfocus = function() {
+    document.getElementById("mess").style.display = "block";
   }
+   
+  // When the user clicks outside of the password field, hide the message box
+ 
   
   // When the user starts to type something inside the password field
   myInput.onkeyup = function() {
@@ -67,4 +72,36 @@ function showPassword() {
       length.classList.remove("valid");
       length.classList.add("invalid");
     }
+
+     
   }
+
+ /* mySecondInput.onkeyup = function() {
+    var mySecondInputValue = mySecondInput.value;
+      //Compare repeated password to ordinary one
+      if(mySecondInputValue.value.match(myInput.value)) {
+        rpsw1.classList.remove("invalid");
+        rpsw1.classList.add("valid");
+      } else {
+        rpsw1.classList.remove("valid");
+        rpsw1.classList.add("invalid");
+      }
+  }*/
+
+/*function checkEmptySpaces() {
+  var x = document.forms["myForm"]["name"].value;
+  if(x == " " || x == null) {
+    alert("You should fullfill all inputs");
+    return false;
+  } 
+}*/
+
+var check = function() {
+  if (document.getElementById('psw').value ==
+    document.getElementById('rpsw').value) {
+    document.getElementById('message').style.color = 'green';
+  } else {
+    document.getElementById('message').style.color = 'red';
+  }
+}
+ 
