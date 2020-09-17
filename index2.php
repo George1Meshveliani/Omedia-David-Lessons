@@ -4,7 +4,16 @@
 <head>
 <link rel="stylesheet" href="http://example.com/public1/style.css" type="text/css">
 <body>  
-
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="home.php">Home</a>
+    </li>
+    <li>
+      <a href="index2.php">Registration</a>
+    </li>
+  </ul>
+</nav>
 
 <?php
 // define variables and set to empty values
