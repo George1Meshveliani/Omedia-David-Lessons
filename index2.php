@@ -40,6 +40,8 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+
+
 ?>
 
 <h2>PHP/HTML Example</h2>
@@ -65,8 +67,8 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <span class="error"  >* <?php echo $repeatPasswordErr;?></span>
   <h2 id='message'>If I am green it's matching else try again </h2>
 
-  <input type="submit"  name="submit" 
-  value="Submit" >  
+  <input type="submit"  name="submit" id="mess1"
+   >  
 
   <div id="mess">
     <h3>Password must contain the following:</h3>
@@ -78,17 +80,30 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 
 </form> 
-
+<script> 
+document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('getMessage').onclick=function(){
+      var req = new XMLHttpRequest();
+      req.open('GET', '/jason/example.com/public1/index2.php.json', true);
+      req.send();
+      req.onload = function(){
+        var json=JSON.parse(req.responseText);
+        document.getElementsByClassName('mess1')[0].innerHTML = JSON.stringify(json)
+      }
+      
+    };
+  }); </script> 
 <script src="index2.js">  </script> 
 
 
  <?php
-echo "<h3>Welcome:</h3>";
-echo $name;
-echo "<br>";
-echo $userName;
-echo "<br>";
-?>
+      echo "<h3>Welcome:</h3>";
+      echo $name;
+      echo "<br>";
+      echo $userName;
+      echo "<br>"; 
+  
+      ?>
 
 </body>
 </html>
