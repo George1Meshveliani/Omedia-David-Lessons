@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["password"])) {
     $passwordErr = "Password is required";
   } else {
-    $userName = test_input($_POST["password"]);
+    $password = test_input($_POST["password"]);
   }
     
   
