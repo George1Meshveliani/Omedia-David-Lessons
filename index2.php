@@ -123,6 +123,8 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       echo "<br>";
       echo $userName;
       echo "<br>"; 
+      echo "<p>Your ID:</p>";
+      echo uniqid();
   
       ?>
 

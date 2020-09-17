@@ -15,6 +15,8 @@ function showPassword() {
   var number = document.getElementById("number");
   var length = document.getElementById("length");
 
+  var name = document.getElementById("name");
+
   var mySecondInput = document.getElementById("rpsw")
   
   // When the user clicks on the password field, show the message box
