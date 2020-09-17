@@ -88,24 +88,36 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   </div>
 
 
-</form> 
-<script> 
-document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
-      var req = new XMLHttpRequest();
-      req.open('GET', '/jason/example.com/public1/index2.php.json', true);
-      req.send();
-      req.onload = function(){
-        var json=JSON.parse(req.responseText);
-        document.getElementsByClassName('mess1')[0].innerHTML = JSON.stringify(json)
-      }
-      
-    };
-  }); </script> 
+</form>  
+
+
+
+<?php
+
+  
+
+  $password = crypt($password, "25x$2y10$");
+
+  $users = file_get_contents("users.json");
+
+  $ar = array(
+       $name,
+       $username, 
+       $password
+  );
+
+  echo json_encode($ar, true);
+
+
+?>
+
 <script src="index2.js">  </script> 
 
 
  <?php
+ foreach ($ar as $key => $value) {
+  echo '<li>'.$key." -- ".$value['name']."</li>";
+}
       echo "<h3>Welcome:</h3>";
       echo $name;
       echo "<br>";
