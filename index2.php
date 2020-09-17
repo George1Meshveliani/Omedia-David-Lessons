@@ -17,7 +17,7 @@
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $password= $repeatPasswordErr = "";
+$nameErr = $userNameErr = $password= $repeatPasswordErr = "";
 $name = $userName = $password = $repeatPassword = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
