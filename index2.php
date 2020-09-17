@@ -9,7 +9,7 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $password= $repeatPasswordErr = "";
-$name = $email = $password = $repeatPassword = "";
+$name = $userName = $password = $repeatPassword = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -19,15 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
+    $userNameErr = "Email is required";
   } else {
-    $email = test_input($_POST["email"]);
+    $userName = test_input($_POST["username"]);
   }
 
   if (empty($_POST["password"])) {
     $passwordErr = "Password is required";
   } else {
-    $email = test_input($_POST["email"]);
+    $userName = test_input($_POST["username"]);
   }
     
   
@@ -49,7 +49,7 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   Full Name: <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  Username: <input type="text" name="email">
+  Username: <input type="text" name="username">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
 
@@ -93,7 +93,7 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 echo "<h3>Welcome:</h3>";
 echo $name;
 echo "<br>";
-echo $email;
+echo $userName;
 echo "<br>";
 ?>
 
