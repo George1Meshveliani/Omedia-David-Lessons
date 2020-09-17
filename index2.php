@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = test_input($_POST["name"]);
   }
   
-  if (empty($_POST["email"])) {
-    $userNameErr = "Email is required";
+  if (empty($_POST["username"])) {
+    $userNameErr = "username is required";
   } else {
     $userName = test_input($_POST["username"]);
   }
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["password"])) {
     $passwordErr = "Password is required";
   } else {
-    $userName = test_input($_POST["username"]);
+    $userName = test_input($_POST["password"]);
   }
     
   
@@ -46,10 +46,10 @@ function test_input($data) {
 <p><span class="error">* required field</span></p>
 <form name="regForm" method="post" 
 action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Full Name: <input type="text" name="name">
+  Full Name: <input type="text" id="name" name="name" >
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  Username: <input type="text" name="username">
+  Username: <input type="text" id="username" name="username" >
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
 
@@ -73,11 +73,7 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
     <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
     <p id="number" class="invalid">A <b>number</b></p>
-
     <p id="length" class="invalid">Minimum <b>12 characters</b></p>
-
-
-    
   </div>
 
 
@@ -86,10 +82,7 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <script src="index2.js">  </script> 
 
 
- 
-
-
-<?php
+ <?php
 echo "<h3>Welcome:</h3>";
 echo $name;
 echo "<br>";
