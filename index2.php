@@ -98,7 +98,8 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
   $password = crypt($password, "25x$2y10$");
 
-  $users = file_get_contents("users.json");
+  $users = file_get_contents("index2.php");
+  $users = file_put_contents("users.json");
 
   $ar = array(
        $name,
@@ -123,8 +124,9 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       echo "<br>";
       echo $userName;
       echo "<br>"; 
-      echo "<p>Your ID:</p>";
+      echo "<p>Your special ID:</p>";
       echo uniqid();
+
   
       ?>
 
