@@ -14,9 +14,9 @@
 
 
 <?php
-foreach ($ar as $key => $value) {
+/*foreach ($ar as $key => $value) {
   echo '<li>'.$key." -- ".$value['name']."</li>";
-}
+} */
       echo "<h3>Welcome:</h3>";
       echo $name;
       echo "<br>";
