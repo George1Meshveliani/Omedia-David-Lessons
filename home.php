@@ -14,9 +14,10 @@
 
 
 <?php
-/*foreach ($ar as $key => $value) {
-  echo '<li>'.$key." -- ".$value['name']."</li>";
-} */
+
+$usersInfo = file_get_contents("users.json");
+$resultedInfo =  json_decode($userinfo, true);
+
       echo "<h3>Welcome:</h3>";
       echo $name;
       echo "<br>";

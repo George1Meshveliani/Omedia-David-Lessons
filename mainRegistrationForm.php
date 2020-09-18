@@ -18,7 +18,7 @@
 <?php
 // define variables and set to empty values
 //$nameErr = $userNameErr = $password= $repeatPasswordErr = "";
-$name = $userName = $password = $repeatPassword = "";
+$name = $username = $password = $repeatPassword = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -122,9 +122,9 @@ action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 
  <?php
- /*foreach ($ar as $key => $value) {
-  echo '<li>'.$key." -- ".$value['name']."</li>";
-}*/
+ foreach ($ar as $key => $value) {
+  echo '<li>'.$key."-".$value['name']."</li>";
+}
       echo "<h3>Welcome:</h3>";
       echo $name;
       echo "<br>";
