@@ -5,7 +5,7 @@
       <a href="home.php">Home</a>
     </li>
     <li>
-      <a href="index2.php">Registration</a>
+      <a href="myRegistrationForm.php">Registration</a>
     </li>
   </ul>
 </nav>
@@ -23,6 +23,7 @@ $resultedInfo =  json_decode($userinfo, true);
       echo "<br>";
       echo $userName;
       echo "<br>"; 
+      
   
 ?>
 </html>
